@@ -79,6 +79,9 @@ class TaskModel(BaseModel):
         Checks the passed task description, 
         if the description was not passed, returns the default value
         """
+        if value:
+            if not value.strip():
+                value = value.strip()
         if not value:
             value = 'Not specified' 
         return value
